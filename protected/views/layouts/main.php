@@ -37,7 +37,7 @@
            --> 
 
             <div id="login">
-                <a href="" class="logButton" id="log">LOGIN</a>
+                <a href="<?php Yii::app()->request->baseUrl?>/user/login" class="logButton" id="log">LOGIN</a>
                 <p>or</p>
                 <a href="<?php Yii::app()->request->baseUrl?>/user/registration" class="logButton" id="reg">REGISTER</a>
   
@@ -50,10 +50,10 @@
         <div id="nav">
         		<div class="navDiv" id="first"><?php echo CHtml::link('Home',array('product/index'),array('class'=>'navButton'));?></div>
                
-               <div class="navDiv" ><?php echo CHtml::link('Products',array('product/index'),array('class'=>'navButton'));?></div>
-               <div class="navDiv" ><?php echo CHtml::link('About',array('product/index'),array('class'=>'navButton'));?></div>
-               <div class="navDiv" ><?php echo CHtml::link('Pages',array('product/index'),array('class'=>'navButton'));?></div>
-               <div class="navDiv" ><?php echo CHtml::link('Blog',array('product/index'),array('class'=>'navButton'));?></div>
+               <div class="navDiv" ><?php echo CHtml::link('Products',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
+               <div class="navDiv" ><?php echo CHtml::link('About',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
+               <div class="navDiv" ><?php echo CHtml::link('Pages',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
+               <div class="navDiv" ><?php echo CHtml::link('Blog',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
             
                <div id="favorit"><a href="" id="favIcon"></a><p>30</p></div>
                <div id="cart"><a href="" id="cartIcon"></a><p>0</p></div>
