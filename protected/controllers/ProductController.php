@@ -126,8 +126,8 @@ class ProductController extends Controller {
 
         $count = Product::model()->count($criteria);
         $pages = new CPagination($count);
-        // элементов на страницу
-        $pages->pageSize = 9;
+        // элементов на страницу 
+        $pages->pageSize =  Yii::app()->config->get('product_pagesize');
         $pages->applyLimit($criteria);
         $dataProvider = new CActiveDataProvider('product', array(
             'criteria' => $criteria,

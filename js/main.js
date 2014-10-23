@@ -44,7 +44,7 @@ $('document').ready(function(){
 	var specialall=$('#specials>*');
 	logotype.css ({'position':'fixed','top':'0','z-index':'998','width':'1400px'})
 	nav.css ({'position':'fixed','top':'40px','z-index':'998','width':'1400px'})
-	window.addEventListener('scroll',moove);
+	//window.addEventListener('scroll',moove);
 	function moove(){
 		var Y = window.pageYOffset;
 		
