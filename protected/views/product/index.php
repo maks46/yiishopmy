@@ -1,12 +1,7 @@
  <div id="arriwals">
  <p id="arriwalsHead">New arrivals on FooseShoes</p>
               
-<?php
-Yii::app()->clientScript->registerScript('console', ' 
-     $( document ).ready(function() {
-  console.log(4)
-});', CClientScript::POS_READY); 
- ?>
+
 
 
  <div class="clear">

@@ -108,4 +108,18 @@ class Order extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        
+        public function getUserOrders() {
+           $aaa= Yii::app()->user->getId();
+        if ( $aaa== NULL) {
+            return null;
+        } else {
+           $id=Yii::app()->user->id;
+          return  Order::model()->findAll('cms_users_id=:id',  array(':id'=>$id));
+        }
+    }
+
+
+    
 }

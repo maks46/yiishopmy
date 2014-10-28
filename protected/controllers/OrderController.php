@@ -61,8 +61,56 @@ class OrderController extends Controller
           
          
         }
+        
+           public function actionView($id) {
+        $this->render('view', array(
+            'model' => $this->loadModel(array('o_id' => $id)),
+        ));
+    }
+    
+       public function loadModel($id) {
+      
+        $model = Order::model()->with('orderItems')->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
           
+        
+public function actionViewOrders() {
+    
+   if(Yii::app()->user->isGuest)
+   {
+   $this->redirect(Yii::app()->homeUrl);
+   }
+   else{
+  $criteria = new CDbCriteria();
+   $criteria->addCondition('cms_users_id=:user_id') ;
+                $criteria->params = array(':user_id' => Yii::app()->user->id);
+                
+        $count = Order::model()->count($criteria);
+        $pages = new CPagination($count);
+        // элементов на страницу 
+        $pages->pageSize =  2;
+        $pages->applyLimit($criteria);
+        $dataProvider = new CActiveDataProvider('order', array(
+            'criteria' => $criteria,
+            'pagination' => $pages,
+                )
+        );
 
+
+
+
+        $models = Order::model()->findAll($criteria);
+
+        $this->render('vieworders', array(
+            'models' => $models,
+            'pages' => $pages,
+            'dataProvider' => $dataProvider,
+        ));
+   }
+}
 //--------------------------	
         
         

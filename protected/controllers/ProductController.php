@@ -116,10 +116,6 @@ class ProductController extends Controller {
      */
     public function actionIndex() {
 
-
-
-
-
         //$dataProvider=new CActiveDataProvider('Product');
         $criteria = new CDbCriteria();
         //$criteria->addCondition('p_id=2');
