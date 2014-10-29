@@ -37,7 +37,8 @@
                         array('label' => 'Пользователи', 'url' => array('/admin/user')),
                         array('label' => 'Настройки сайта', 'url' => array('/admin/config')),
                         array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest),
+                        array('label' => 'Заказы', 'url' => array('/admin/order'))
                     ),
                 ));
                 ?>
@@ -61,10 +62,6 @@
             </div><!-- footer -->
 
         </div><!-- page -->
-        <?php
-        $clientScript = Yii::app()->clientScript;
-        $clientScript->registerCoreScript('jquery');
-        $clientScript->registerScriptFile($baseUrl . '/js/main.js');
-        ?>
+      
     </body>
 </html>
