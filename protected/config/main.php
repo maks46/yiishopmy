@@ -125,7 +125,7 @@ return array(
 		*/
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=mysql.hostinger.com.ua;dbname=u965856634_cms',
+			'connectionString' => 'mysql:host=localhost;dbname=u965856634_cms',
 			'emulatePrepare' => true,
 			'username' => 'u965856634_root',
 			'password' => '1IpemQ3TcJ',

@@ -10,7 +10,7 @@
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />-->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" media="screen, projection" />
-		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/slider.css" media="screen, projection" />
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />-->
 	<!--[if lt IE 8]>
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
@@ -48,16 +48,13 @@
   
         <!-- ***** НАВИГАЦИЯ ***** -->  
         <div id="nav">
-        		<div class="navDiv" id="first"><?php echo CHtml::link('Home',array('product/index'),array('class'=>'navButton'));?></div>
+                <div class="navDiv" id="first"><?php echo CHtml::link('Home',array('product/index'),array('class'=>'navButton'));?></div>
                
                <div class="navDiv" ><?php echo CHtml::link('Products',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
                <div class="navDiv" ><?php echo CHtml::link('About',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
                <div class="navDiv" ><?php echo CHtml::link('Pages',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
                <div class="navDiv" ><?php echo CHtml::link('Blog',Yii::app()->createAbsoluteUrl('product/index'),array('class'=>'navButton'));?></div>
-            
-               <div id="favorit"><a href="" id="favIcon"></a><p>30</p></div>
-               <div id="cart"><a href="" id="cartIcon"></a><p>0</p></div>
-              
+        
         </div>
 <div id='slider'>
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/1.jpg?>"  class='slide'>
@@ -89,12 +86,14 @@ if(Yii::app()->user->hasFlash('global'))
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
             
+               <div class="search">
   <?php
       
                           $this->widget('SearchBlock', array(
       )); 
     
 ?>
+               </div>
            
 	<?php echo $content; ?>
 	

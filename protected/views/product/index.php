@@ -1,27 +1,5 @@
  <div id="arriwals">
  <p id="arriwalsHead">New arrivals on FooseShoes</p>
-              
-
-
-
- <div class="clear">
-     <div id="info" class="info">
-                    
-     <?php if(Yii::app()->user->hasFlash('CartAdded')){ 
-
-
-
- echo Yii::app()->user->getFlash('CartAdded');
-     }
- ?>
-
- </div>
-
-
-      
-          
-         
-    
 <?php
 
  $this->widget('zii.widgets.CListView', array(

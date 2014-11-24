@@ -50,11 +50,12 @@ class OrderController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
         public function actionNow(){
-         $date = date("Y-m-d");
+         $date = '/^'.date("Y-m-d");
+         
         //$dataProvider=new CActiveDataProvider('Product');
         $criteria = new CDbCriteria();
         //$criteria->addCondition('p_id=2');
-        $criteria->addCondition('o_create_time = :date');
+       $criteria->addCondition('o_create_time = :date');
 	$criteria->params = array(':date' => $date);
         $count = Order::model()->count($criteria);
         $pages = new CPagination($count);
@@ -67,6 +68,7 @@ class OrderController extends Controller
         $this->render('today', array(
             'models' => $models,
             'pages' => $pages,
+            'date'=>$date,
             'dataProvider' => $dataProvider,
         ));
         }
