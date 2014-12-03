@@ -1,0 +1,62 @@
+#slider{
+	overflow: hidden;
+	width: 1400px;
+	height: 550px;
+	margin: 0 auto;
+	 background-color: #2A2A2A;
+	position: relative;
+	
+}
+.slide{
+	
+	width: 1398px;
+	height: 500px;
+	position: absolute;
+	border:1px solid #444;
+		
+}
+.sliderlinks{
+text-align: center;
+margin-top:515px;
+}
+.control-slide{
+ margin:5px 1px;
+    display:inline-block;
+    width: 183px;
+   	height: 6px;
+    overflow:hidden;
+    text-indent:-9999px;
+    border: 2px solid #111;
+    background: #333;
+   opacity: 0.4;
+
+}
+.control-slide:hover{
+    cursor:pointer;
+   
+}
+
+.control-slide.active{
+background-color: #00C6A0;
+border: 2px solid #111;
+opacity: .7;
+
+}
+#backbutton,#nextbutton{
+text-decoration: none;
+display: block;
+position: absolute;
+width: 74px;
+height: 74px;
+z-index: 500;
+}
+#backbutton{
+	left: 30px;
+	top:155px;
+	background: url(../img/left-arrow.png) no-repeat;
+}
+#nextbutton{
+	right:30px;
+	top:155px;
+	background: url(../img/right-arrow.png) no-repeat;
+}
